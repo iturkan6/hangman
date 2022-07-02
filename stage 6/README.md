@@ -1,0 +1,98 @@
+<h1>Stage 6/8: The value of life</h1>
+<h5>Description</h5>
+<p>So far, our game has been some kind of a draft; we still lack a way to handle the player&apos;s victory. The player has only eight attempts, and the number of remaining attempts decreases every turn, even if players guess them correctly.</p>
+<p>In this stage, we will start reducing the attempts only after players make a mistake. They can be mistaken eight times: attempts are reduced if the suggested letter is not in the word or if it has already been suggested before (no matter whether it&apos;s been a correct one or not). If a player has guessed all the letters, they win. If a player has some attempts after guessing the word, discard them, notify the player, and terminate the game.</p>
+<h5>Objectives</h5>
+<p>Players start the game with eight lives. In other words, they can make a mistake only eight times.</p>
+<ul>
+    <li>When players input a valid letter, uncover it in the word, and carry on;</li>
+    <li>Print&nbsp;That letter doesn&apos;t appear in the word.&nbsp;and reduce the number of attempts if the word doesn&apos;t contain the letter, even if this particular letter has already been suggested before;</li>
+    <li>Print&nbsp;No improvements.&nbsp;and reduce the attempt&apos; counter when players input a letter that has been successfully uncovered before;</li>
+    <li>When players win, print the uncovered word,&nbsp;You guessed the word!&nbsp;, and the winning message. Each one should be on a new line.</li>
+</ul>
+<p><br></p>
+<div>Please, make sure that the output format of your program follows the example precisely. Pay attention to the empty lines between attempts and at the end.</div>
+<h5>Examples</h5>
+<p>The greater-than symbol followed by a space (&gt;&nbsp;) represents the user input. Note that it&apos;s not part of the input. Comments after&nbsp;#&nbsp;provided for illustrative purposes and not as part of the task.</p>
+<p><strong>Example 1</strong>:&nbsp;<em>note how the attempts are decreased when the player inputs the same letter twice or thrice</em></p>
+<pre>H A N G M A N  # 8 attempts
+
+------
+Input a letter: &gt; t
+
+--t---
+Input a letter: &gt; z
+That letter doesn&apos;t appear in the word.  # 7 attempts
+
+--t---
+Input a letter: &gt; t
+No improvements.  # 6 attempts
+
+--t---
+Input a letter: &gt; t
+No improvements.  # 5 attempts
+
+--t---
+Input a letter: &gt; y
+
+-yt---
+Input a letter: &gt; x
+That letter doesn&apos;t appear in the word.  # 4 attempts
+
+-yt---
+Input a letter: &gt; y
+No improvements.  # 3 attempts
+
+-yt---
+Input a letter: &gt; p
+
+pyt---
+Input a letter: &gt; p
+No improvements.  # 2 attempts
+
+pyt---
+Input a letter: &gt; q
+That letter doesn&apos;t appear in the word.  # 1 attempt
+
+pyt---
+Input a letter: &gt; p
+No improvements.  # 0 attempts
+
+You lost!</pre>
+<p><strong>Example 2</strong>:&nbsp;<em>success</em></p>
+<pre>H A N G M A N  # 8 attempts
+
+----
+Input a letter: &gt; j
+
+j---
+Input a letter: &gt; i
+That letter doesn&apos;t appear in the word.  # 7 attempts
+
+j---
+Input a letter: &gt; g
+That letter doesn&apos;t appear in the word.  # 6 attempts
+
+j---
+Input a letter: &gt; g
+That letter doesn&apos;t appear in the word.  # 5 attempts
+
+j---
+Input a letter: &gt; g
+That letter doesn&apos;t appear in the word.  # 4 attempts
+
+j---
+Input a letter: &gt; g
+That letter doesn&apos;t appear in the word.  # 3 attempts
+
+j---
+Input a letter: &gt; a
+
+ja-a
+Input a letter: &gt; v
+
+java
+You guessed the word!
+You survived!</pre>
+<p><br></p>
+<p><br></p>
